@@ -28,11 +28,11 @@ python3 mustache.py paletteFilePath templateFilePath targetFilePath
     file if any contents were there beforehand
 
 ## TODO:
-  [ ] Rewrite this in c++ since I know that better
-  [ ] Be able to work with `#` prefixed values
-  [ ] Work with toml & yaml files
-  [ ] Better help output
-  [ ] Use flag-based arguments
+  - [ ] Rewrite this in c++ since I know that better
+  - [ ] Be able to work with `#` prefixed values
+  - [ ] Work with toml & yaml files
+  - [ ] Better help output
+  - [ ] Use flag-based arguments
 
 ## Credits/Reference:
   - MO2 theme:
