@@ -1,10 +1,15 @@
-import json, re, os
+import json, os, sys, re
+
+# argv check
+if len(sys.argv) < 3:
+    print("Usage: mustache.py /path/to/palette.json /path/to/templateFile /path/to/targetFile")
+    exit
+else:
+    palette_path   = f'{sys.argv[1]}'
+    template_path  = f'{sys.argv[2]}'
+    target_path    = f'{sys.argv[3]}'
 
 tool_root = './'
-palette_path  = f'{tool_root}/palette.json'
-template_path = f'{tool_root}/Stylix.qss.mustache'
-target_path   = '/path/to/your/modorganizer2/stylesheets/Stylix.qss'
-
 # read json, store in dictionary,
 with open(palette_path, 'r') as file:
     palette = json.load(file)
@@ -12,8 +17,8 @@ with open(palette_path, 'r') as file:
 print(f"current palette: {palette}") # debug
 
 # append '#' to all values
-# for key in palette:
-#    palette[key] = "#" + palette[key]
+for key in palette:
+   palette[key] = "#" + palette[key]
 
 # read template, replace all {{basexx}}
 # with hex color values
